@@ -13,7 +13,7 @@ export default function Head() {
       <meta name="author" content="Poliana Estética" />
 
       {/* Verificação Google Search Console */}
-      <meta name="google-site-verification" content="google9c29fbe31e2739db" />
+      <meta name="google-site-verification" content="WKbHrteBd7ZVAata6JEWdk1U8D2AAF8Smo41RTP5XFU" />
 
       {/* Open Graph para redes sociais */}
       <meta property="og:title" content="Poliana Estética | Visagismo e Consultoria de Imagem" />
