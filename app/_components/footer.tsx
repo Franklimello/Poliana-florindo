@@ -18,7 +18,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               href={`https://wa.me/5533999638245?text=Olá Poliana, vim pelo site e gostaria de agendar um horário.`}
-              className="bg-yellow-600 text-black flex items-center justify-center w-fit gap-2 px-4 py-2 rounded-md font-medium"
+              className="bg-rose-300 text-black flex items-center justify-center w-fit gap-2 px-4 py-2 rounded-md font-medium"
               aria-label="Agendar horário pelo WhatsApp"
             >
               <Image src="/whatsapp.svg" alt="Ícone do WhatsApp" width={24} height={24} />
@@ -69,7 +69,7 @@ export function Footer() {
 
       </div>
 
-      <footer className="bg-yellow-600 text-black py-4 text-center font-medium" role="contentinfo">
+      <footer className="bg-rose-500 text-black py-4 text-center font-medium" role="contentinfo">
         <p className="text-sm">
           &copy; {new Date().getFullYear()} Desenvolvido por Franklim Melo. Todos os direitos reservados.
         </p>

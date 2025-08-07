@@ -48,15 +48,15 @@ export function About() {
 
             <ul className="space-y-4 text-gray-700" aria-label="Destaques da mentoria e método">
               <li className="flex items-center gap-2">
-                <Check className="text-yellow-500" aria-hidden="true" />
+                <Check className="text-rose-500" aria-hidden="true" />
                 Método validado em +13 países.
               </li>
               <li className="flex items-center gap-2">
-                <Check className="text-yellow-500" aria-hidden="true" />
+                <Check className="text-rose-500" aria-hidden="true" />
                 Foco em autoestima, vendas e posicionamento.
               </li>
               <li className="flex items-center gap-2">
-                <Check className="text-yellow-500" aria-hidden="true" />
+                <Check className="text-rose-500" aria-hidden="true" />
                 Visagismo estratégico com resultado real.
               </li>
             </ul>
@@ -83,7 +83,7 @@ export function About() {
                 rel="noopener noreferrer"
                 href={`https://wa.me/5533999638245?text=Olá, gostaria de saber mais sobre sua mentoria de visagismo.`}
                 aria-label="Entrar em contato via WhatsApp para saber mais sobre mentoria de visagismo"
-                className="bg-yellow-500 text-black flex items-center justify-center w-fit gap-2 px-4 py-2 rounded-md hover:bg-yellow-400 transition"
+                className="bg-rose-500 text-black flex items-center justify-center w-fit gap-2 px-4 py-2 rounded-md hover:bg-rose-900 transition"
               >
                 <MessageCircle className="w-5 h-5" aria-hidden="true" />
                 Fale comigo no WhatsApp
