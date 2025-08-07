@@ -43,6 +43,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        {/* 🔐 Metatag de verificação do Google Search Console */}
+        <meta name="google-site-verification" content="WKbHrteBd7ZVAata6JEWdk1U8D2AAF8Smo41RTP5XFU" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -52,3 +56,4 @@ export default function RootLayout({
     </html>
   );
 }
+
