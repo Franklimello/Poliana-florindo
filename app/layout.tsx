@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'Poliana Estética',
     images: [
       {
-        url: '/capa-site.jpg',
+        url: '/og-image.jpeg',
         width: 1200,
         height: 630,
         alt: 'Poliana Estética',
