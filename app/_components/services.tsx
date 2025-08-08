@@ -11,6 +11,8 @@ import {
   Users,
 } from "lucide-react"
 
+
+
 import { Playfair_Display } from "next/font/google";
 
 const playfair = Playfair_Display({
@@ -53,6 +55,8 @@ const services = [
     linkText: 'Olá, vi no site sobre workshops e treinamentos e quero mais informações.'
   },
 ];
+
+
 
 export function Services() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
