@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Poliana Estética | Visagismo e Consultoria de Imagem',
     description: 'Mentoria exclusiva para mulheres que desejam transformar sua imagem e atrair clientes certos.',
-    url: 'https://www.polianaestetica.com.br',
+    url: 'https://poliana-florindo.vercel.app/',
     siteName: 'Poliana Estética',
     images: [
       {

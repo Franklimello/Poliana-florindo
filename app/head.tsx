@@ -24,11 +24,11 @@ export default function Head() {
         content="Mentoria exclusiva para mulheres que desejam transformar sua imagem e atrair clientes certos."
       />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://www.polianaestetica.com.br" />
+      <meta property="og:url" content="https://poliana-florindo.vercel.app/" />
       <meta property="og:image" content="/og-image.jpeg" />
 
       {/* URL canônica */}
-      <link rel="canonical" href="https://www.polianaestetica.com.br" />
+      <link rel="canonical" href="https://poliana-florindo.vercel.app/" />
     </>
   );
 }
