@@ -25,7 +25,7 @@ export default function Head() {
       />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://www.polianaestetica.com.br" />
-      <meta property="og:image" content="/capa-site.jpg" />
+      <meta property="og:image" content="/og-image.jpeg" />
 
       {/* URL canônica */}
       <link rel="canonical" href="https://www.polianaestetica.com.br" />
