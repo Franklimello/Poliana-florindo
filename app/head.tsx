@@ -6,6 +6,8 @@ export default function Head() {
         name="description"
         content="Transforme sua imagem com a mentoria de visagismo estratégico da Poliana Estética. Atendimento personalizado para mulheres em Lajinha e região."
       />
+      <link rel="icon" href="/favicon.ico" />
+
       <meta
         name="keywords"
         content="visagismo, consultoria de imagem, estética, Lajinha, mentoria, autoestima, poliana florindo"
