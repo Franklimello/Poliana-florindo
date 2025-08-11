@@ -9,17 +9,17 @@ import {
   Palette,
   BookOpenCheck,
   Users,
+  Star,
+  ArrowRight,
+  Play
 } from "lucide-react"
-
-
 
 import { Playfair_Display } from "next/font/google";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: "700", // Pode ajustar para "600" ou "500" também
+  weight: ["400", "600", "700"],
 });
-
 
 const services = [
   {
@@ -28,7 +28,9 @@ const services = [
     duration: "Sessões personalizadas",
     price: "Sob consulta",
     icon: <Sparkles />,
-    linkText: 'Olá, vi no site sobre a mentoria de visagismo estratégico e gostaria de mais informações.'
+    linkText: 'Olá, vi no site sobre a mentoria de visagismo estratégico e gostaria de mais informações.',
+    badge: "Mais Procurado",
+    color: "from-rose-500 to-pink-600"
   },
   {
     title: "Análise de Coloração Pessoal",
@@ -36,7 +38,9 @@ const services = [
     duration: "Duração: 1h30",
     price: "Valor único",
     icon: <Palette />,
-    linkText: 'Olá, vi no site sobre análise de coloração pessoal e gostaria de agendar.'
+    linkText: 'Olá, vi no site sobre análise de coloração pessoal e gostaria de agendar.',
+    badge: "Premium",
+    color: "from-purple-500 to-indigo-600"
   },
   {
     title: "Consultoria de Imagem & Posicionamento",
@@ -44,7 +48,9 @@ const services = [
     duration: "Atendimento online",
     price: "Pacotes exclusivos",
     icon: <BookOpenCheck />,
-    linkText: 'Olá, vi no site sobre consultoria de imagem e gostaria de saber mais.'
+    linkText: 'Olá, vi no site sobre consultoria de imagem e gostaria de saber mais.',
+    badge: "Completo",
+    color: "from-emerald-500 to-teal-600"
   },
   {
     title: "Workshops e Treinamentos",
@@ -52,11 +58,11 @@ const services = [
     duration: "Sob agendamento",
     price: "Orçamento para grupos",
     icon: <Users />,
-    linkText: 'Olá, vi no site sobre workshops e treinamentos e quero mais informações.'
+    linkText: 'Olá, vi no site sobre workshops e treinamentos e quero mais informações.',
+    badge: "Empresarial",
+    color: "from-blue-500 to-cyan-600"
   },
 ];
-
-
 
 export function Services() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -65,6 +71,9 @@ export function Services() {
     slidesToScroll: 1,
     breakpoints: {
       '(min-width: 768px)': {
+        slidesToScroll: 2,
+      },
+      '(min-width: 1024px)': {
         slidesToScroll: 3,
       }
     }
@@ -79,82 +88,102 @@ export function Services() {
   }
 
   return (
-    <section className="bg-white py-16">
-      <div className="container mx-auto px-4">
-        <div>
-          <h2 className={`text-4xl text-black font-bold mb-12 text-center text-rose-700 ${playfair.className}`}>
-            Serviços
-            </h2>
+    <section className="bg-gradient-to-br from-slate-50 via-white to-rose-50 py-20">
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-rose-500 to-pink-600 rounded-full mb-6">
+            <Star className="w-8 h-8 text-white" />
+          </div>
+          
+          <h2 className={`text-5xl lg:text-6xl font-bold text-slate-900 mb-6 ${playfair.className}`}>
+            Nossos{" "}
+            <span className="bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">
+              Serviços
+            </span>
+          </h2>
+          
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            Soluções personalizadas para transformar sua imagem em uma ferramenta estratégica de sucesso profissional
+          </p>
+        </div>
 
-          <div className="relative">
-            <div className="overflow-hidden" ref={emblaRef}>
-              <div className="flex">
-                {services.map((item, index) => (
-                  <div key={index} className="flex-[0_0_100%] min-w-0 md:flex-[0_0_calc(100%/3)] px-3">
-                    <article className="bg-[#e6dccf] text-black rounded-2xl p-6 space-y-4 h-full flex flex-col shadow-md">
-                      <div className="flex-1 flex items-start justify-between">
-                        <div className="flex gap-3">
-                          <span className="text-3xl text-rose-600">{item.icon}</span>
-                          <div>
-                            <h3 className="font-bold text-xl my-1">{item.title}</h3>
-                            <p className="text-sm">{item.description}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="border-t border-gray-300 pt-4 flex items-center justify-between">
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
+        {/* Services Carousel */}
+        <div className="relative mb-16">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-6">
+              {services.map((item, index) => (
+                <div key={index} className="flex-[0_0_100%] min-w-0 md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)]">
+                  <article className="group bg-white rounded-3xl p-8 h-full flex flex-col shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-slate-100 relative overflow-hidden">
+                    {/* Badge */}
+                    <div className={`absolute top-6 right-6 bg-gradient-to-r ${item.color} text-white px-3 py-1 rounded-full text-xs font-semibold`}>
+                      {item.badge}
+                    </div>
+                    
+                    {/* Icon */}
+                    <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <span className="text-white text-2xl">{item.icon}</span>
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1 space-y-4">
+                      <h3 className={`text-2xl font-bold text-slate-900 ${playfair.className}`}>
+                        {item.title}
+                      </h3>
+                      
+                      <p className="text-slate-600 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+
+                    {/* Footer */}
+                    <div className="border-t border-slate-100 pt-6 mt-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center gap-2 text-sm text-slate-500">
                           <Clock className="w-4 h-4" />
                           <span>{item.duration}</span>
                         </div>
-                        <a
-                          target='_blank'
-                          href={`https://wa.me/5533999638245?text=${encodeURIComponent(item.linkText)}`}
-                          className="flex items-center justify-center gap-2 bg-rose-600 text-white px-4 py-1 rounded-md hover:bg-rose-700 transition"
-                        >
-                          <MessageCircle className="w-5 h-5" />
-                          Entrar em contato
-                        </a>
+                        <span className="text-lg font-semibold text-slate-900">
+                          {item.price}
+                        </span>
                       </div>
-                    </article>
-                  </div>
-                ))}
-              </div>
+                      
+                      <a
+                        target='_blank'
+                        href={`https://wa.me/5533999638245?text=${encodeURIComponent(item.linkText)}`}
+                        className={`group/btn flex items-center justify-center gap-3 bg-gradient-to-r ${item.color} hover:shadow-lg text-white font-semibold px-6 py-4 rounded-2xl transition-all duration-300 hover:scale-105 w-full`}
+                      >
+                        <MessageCircle className="w-5 h-5 group-hover/btn:animate-pulse" />
+                        <span>Solicitar Informações</span>
+                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </a>
+                    </div>
+                  </article>
+                </div>
+              ))}
             </div>
-
-            {/* Botões de navegação */}
-            <button>
-              <div
-                className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 duration-300"
-                onClick={scrollPrev}
-              >
-                <ChevronLeft className="w-6 h-6 text-gray-600" />
-              </div>
-            </button>
-            <button>
-              <div
-                className="absolute top-1/2 right-0 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 duration-300"
-                onClick={scrollNext}
-              >
-                <ChevronRight className="w-6 h-6 text-gray-600" />
-              </div>
-            </button>
           </div>
-          <div className="mt-12 flex justify-center">
-                <div className="w-full max-w-2xl aspect-video rounded-xl overflow-hidden shadow-lg">
-                    <iframe
-                    width="100%"
-                    height="100%"
-                    src="https://www.youtube.com/embed/OVZU0rF87hA?si=h3wynWAcDWmj2DSt"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                    ></iframe>
-                </div>
-                </div>
 
+          {/* Navigation Buttons */}
+          <button
+            onClick={scrollPrev}
+            className="absolute top-1/2 -left-6 transform -translate-y-1/2 z-10 bg-white p-4 rounded-full shadow-xl hover:shadow-2xl hover:bg-slate-50 transition-all duration-300 group"
+            aria-label="Serviço anterior"
+          >
+            <ChevronLeft className="w-6 h-6 text-slate-600 group-hover:text-slate-900 group-hover:-translate-x-1 transition-all" />
+          </button>
+          
+          <button
+            onClick={scrollNext}
+            className="absolute top-1/2 -right-6 transform -translate-y-1/2 z-10 bg-white p-4 rounded-full shadow-xl hover:shadow-2xl hover:bg-slate-50 transition-all duration-300 group"
+            aria-label="Próximo serviço"
+          >
+            <ChevronRight className="w-6 h-6 text-slate-600 group-hover:text-slate-900 group-hover:translate-x-1 transition-all" />
+          </button>
         </div>
+
+        {/* Video Section */}
+        
       </div>
     </section>
   );
